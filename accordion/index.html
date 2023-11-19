@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+
+    <div class="accordion">
+        <div class="accordion-item">
+            <div class="accordion-item__label">
+                <h2><i class="fa-regular fa-comment"></i> Simple accordion first point</h2>
+            </div>
+            <div class="accordion-item__content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tincidunt faucibus est, in facilisis elit interdum ornare. Nunc placerat nec ante eu dictum. Etiam tempus nulla in suscipit hendrerit. Sed commodo urna vel mattis efficitur. Proin posuere fringilla neque, vitae interdum dui consectetur at. Duis velit elit, suscipit a diam sit amet, pharetra efficitur erat. Donec egestas justo venenatis lobortis vestibulum. Duis quis ligula arcu. Suspendisse sit amet velit quis metus pellentesque commodo sit amet in sem.</p>
+            </div>
+        </div>
+        <div class="accordion-item active">
+            <div class="accordion-item__label">
+                <h2><i class="fa-regular fa-comment"></i> This is next point for accordion</h2>
+            </div>
+            <div class="accordion-item__content">
+                <p>Nullam euismod metus congue blandit accumsan. Integer in lectus sodales, laoreet dolor quis, iaculis turpis. Duis vehicula ex leo, a feugiat risus ornare vitae. Sed eget dolor eget sapien placerat scelerisque. Etiam urna mi, congue non mauris eget, elementum consectetur ante. Donec id mi ex. Fusce quis egestas ex, et ultricies est.</p>
+                <p>Aliquam tincidunt ante posuere ex tempus congue. Nunc sagittis eu ex eget euismod. Suspendisse cursus vehicula nisi. Fusce metus lorem, vestibulum placerat nisi eget, rhoncus varius turpis. Aliquam tempus varius efficitur. Duis nec tellus felis. Suspendisse eu ligula auctor, gravida libero eu, viverra dolor. Etiam pharetra et quam non suscipit. Donec imperdiet auctor diam, sed consectetur urna.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item__label">
+                <h2><i class="fa-regular fa-comment"></i> Accordion last point</h2>
+            </div>
+            <div class="accordion-item__content">
+                <p>Nulla vehicula diam ex, vitae auctor nisl vehicula eu. Vivamus quis tortor ac neque sodales pulvinar. Ut in justo mauris. Cras bibendum ornare erat nec aliquam. Proin venenatis, sem in accumsan dictum, tellus arcu molestie ipsum, ut pharetra lectus tellus quis purus. Nam sed velit in ex aliquet accumsan vitae quis sem. Morbi ut convallis ipsum, ac posuere nisi. Morbi maximus lorem at nunc consequat facilisis. Sed ornare arcu vitae feugiat semper. Aenean cursus nulla velit, nec imperdiet leo iaculis in. Donec dictum urna eu turpis aliquet blandit.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const accordionItems = document.querySelectorAll(".accordion-item");
+
+        accordionItems.forEach(item => {
+            item.addEventListener("click", function () {
+                if (item.classList.contains("active")) {
+                    item.classList.remove("active");
+                } else {
+                    closeAllAccordionItems();
+                    item.classList.add("active");
+                }
+            });
+        });
+
+        function closeAllAccordionItems() {
+            accordionItems.forEach(item => {
+                item.classList.remove("active");
+            });
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/71fcf552c7.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

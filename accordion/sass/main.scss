@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&display=swap');
+
+:root {
+    --defaultFontSize: 16px;
+    --fontColor: #000;
+    --backgroundColor: #101316;
+    --fontFamily: 'Titillium Web', sans-serif;
+}
+
+html {
+    font-size: var(--defaultFontSize);
+    color: var(--fontColor);
+    background: var(--backgroundColor);
+    font-family: var(--fontFamily);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion {
+    padding: 40px 50px;
+    width: 80%;
+    background: #fff;
+}
+
+.accordion-item {
+    border-bottom: 2px solid #13151a;
+
+    &__label {
+        padding: 10px 10px 10px 10px;
+        font-weight: bold;
+        position: relative;
+        cursor: pointer;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 15px;
+            height: 15px;
+            border: 2px solid;
+            border-color: transparent transparent #000000 #000000;
+            transform: rotate(225deg);
+            transition: all 0.275s;
+        }
+        i {
+            margin-right: 10px;
+        }
+    }
+    &__content {
+        padding: 10px;
+        overflow: hidden;
+        display: none;
+        p {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.active {
+        .accordion-item__label::before {
+            top: 15px;
+            transform: rotate(310deg);
+        }
+        .accordion-item__content {
+            display: block;
+        }
+    }
+}
