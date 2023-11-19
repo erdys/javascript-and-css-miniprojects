@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <a href="#" class="btn btn-primary">First button</a>
+    <a href="#" class="btn btn-second">Second button</a>
+
+    <script>
+        const links = document.querySelectorAll('.btn')
+
+        links.forEach(btn => btn.addEventListener('click', function (e) {
+            const span = document.createElement('span');
+
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+
+            span.style.left = `${x}px`
+            span.style.top = `${y}px`
+
+            this.appendChild(span);
+        }))
+    </script>
+
+</body>
+
+</html>

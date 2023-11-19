@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&display=swap");
+:root {
+  --defaultFontSize: 16px;
+  --fontColor: #fff;
+  --backgroundColor: #101316;
+  --fontFamily: "Titillium Web", sans-serif;
+}
+
+html {
+  font-size: var(--defaultFontSize);
+  color: var(--fontColor);
+  background: var(--backgroundColor);
+  font-family: var(--fontFamily);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  margin: 10px;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary {
+  background: linear-gradient(180deg, #f15b3f, #d24955);
+}
+.btn-second {
+  background: linear-gradient(180deg, #28616c, #073a45);
+}
+
+span {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: show 0.275s linear;
+}
+
+@keyframes show {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 0.3;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
