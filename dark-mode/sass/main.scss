@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400;700&display=swap');
+
+:root {
+    --defaultFontSize: 16px;
+    --fontColor: #000;
+    --backgroundColor: #fff;
+    --fontFamily: 'Titillium Web', sans-serif;
+    color-scheme: light;
+}
+
+.dark {
+    --fontColor: #fff;
+    --backgroundColor: #000;
+    color-scheme: dark;
+}
+
+html {
+    font-size: var(--defaultFontSize);
+    color: var(--fontColor);
+    background: var(--backgroundColor);
+    font-family: var(--fontFamily);
+    transition: color 300ms, background-color 300ms;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    margin: 0 auto;
+    padding: 1rem 0;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.content {
+    margin: 3rem auto;
+    width: 80%;
+
+    p {
+        margin: 1.5rem 0;
+    }
+
+    ul,
+    ol {
+        padding: 0;
+        list-style-position: inside;
+        li {
+            padding: 0.25rem 0;
+        }
+    }
+
+    table {
+        margin: 1.5rem 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        padding: 0;
+        font-weight: normal;
+    }
+}
+
+.theme-toggle-button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+    border: 1px solid #008f8c;
+    border-radius: 0.625rem;
+    &:hover {
+        background: #008f8c;
+    }
+    &:focus {
+        box-shadow: 0px 0px 0 3px #008f8c40;
+    }
+
+    .dark-icon,
+    .light-icon {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        transition: all 0.3s linear;
+        stroke: #008f8c;
+        fill: none;
+        &.active {
+            top: 0;
+            stroke: #008f8c;
+        }
+        &:hover,
+        &:focus {
+            &.active {
+                stroke: #fff;
+            }
+        }
+    }
+}
