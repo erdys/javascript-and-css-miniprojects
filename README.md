@@ -25,5 +25,5 @@ filter: invert(1) hue-rotate(180deg);
 or if you want full greyscale dark mode then use
 
 ```CSS
-filter: invert(1) greyscalle(1);
+filter: invert(1) grayscale(1);
 ```
